@@ -1,0 +1,95 @@
+page-place {
+   
+    .bg{
+        background: url(../assets/imgs/bg1.jpg) no-repeat left fixed; 
+        color:color($colors, light);
+
+    }
+    .ion-toolbar {
+      font-family: 'Athiti',sans-serif;
+      font-size: 5px;
+    }
+    .toolbar-title{
+      text-align: left;
+      font-size: 30px;
+      font-family: 'Athiti', sans-serif;
+    }
+   
+ion-card.adv-map p {
+    font-size: 0.7em !important;
+    font-family: 'Athiti', sans-serif;
+  }
+  
+  button[fab].fab-map {
+    top: calc(100% - 35px);
+    z-index: 50;
+  }
+  
+  .item-bold {
+    font-weight: bold;
+  }
+  
+  ion-content.cards-bg {
+    background-color: #f4f4f7;
+  }
+      body.ios {
+
+        .tab-button {
+          &[aria-selected="false"] {
+            color: #8c8c8c !important;
+          }
+      
+          &[aria-selected="true"] {
+            color: #f53d3d !important;
+          }
+        }
+      
+      }
+    .bg{
+        background: url(../assets/imgs/bg1.jpg) no-repeat left fixed; 
+        color:color($colors, light);
+
+    }
+    .ion-toolbar {
+      font-family: 'Athiti',sans-serif;
+      font-size: 5px;
+    }
+    .toolbar-title{
+      text-align: left;
+      font-size: 30px;
+      font-family: 'Athiti', sans-serif;
+    }
+   
+ion-card.adv-map p {
+    font-size: 0.7em !important;
+    font-family: 'Athiti', sans-serif;
+  }
+  
+  button[fab].fab-map {
+    top: calc(100% - 35px);
+    z-index: 50;
+  }
+  
+  .item-bold {
+    font-weight: bold;
+  }
+  
+  ion-content.cards-bg {
+    background-color: #f4f4f7;
+  }
+      body.ios {
+
+        .tab-button {
+          &[aria-selected="false"] {
+            color: #8c8c8c !important;
+          }
+      
+          &[aria-selected="true"] {
+            color: #f53d3d !important;
+          }
+        }
+      
+      }
+}
+
+

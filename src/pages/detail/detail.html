@@ -1,0 +1,49 @@
+<ion-header>
+
+
+
+  </ion-header>
+  
+  ======
+  <ion-content class="cards-bg" >
+      <ion-fab right bottom>
+          <button ion-fab color="primary" (click)="showTweetModal()"><ion-icon name="add"></ion-icon></button>
+        </ion-fab>
+            <ion-card class="adv-map" *ngFor="let tweet of tweets">
+              <div style="position: relative">
+                <img src="assets/imgs/T2.JPG">
+                <ion-fab right top>
+                  <button   ion-fab color="add2" ion-fab class="fab-map">
+                    <ion-icon name='pin'></ion-icon>
+                  </button>
+                </ion-fab>
+              </div>
+              <ion-item>
+                <ion-icon color="subtle" large item-start name='ios-paper-outline'></ion-icon>
+                <h2>ข้อมูล</h2>
+                <p>
+                ชื่อตึก :     {{tweet.id1}}<br>
+                จำนวนชั้น : {{tweet.floor}} <br>
+                
+                </p>
+              </ion-item>
+              <ion-item>
+                <ion-icon color="subtle" large item-start name='information-circle'></ion-icon>
+                <h2>รายละเอียด</h2>
+                <p>{{tweet.detail}}</p>
+              </ion-item>
+              <ion-item actions>
+                <span ion-text item-start color="add2" class="item-bold">18 min</span>
+                <span ion-text item-start color="subtle">(2.6 mi)</span>
+                <button  ion-button color="add2" clear item-end icon-start>
+                  <ion-icon name='navigate'></ion-icon>
+                  Start
+                </button>
+                <button  [navPush]="DetailPage" ion-button color="add2" clear item-end icon-start >
+                  <ion-icon name='md-document'></ion-icon>
+                  Detail
+                </button>
+              </ion-item>
+            </ion-card>
+  </ion-content>
+  

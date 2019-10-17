@@ -1,0 +1,21 @@
+<ion-header>
+
+</ion-header>
+<ion-content padding class="card-background-page" >
+
+
+
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-list>
+        <ion-card class="adv-map" *ngFor="let file of files | async">
+          <ion-item>
+            <h2>   {{ file.name }}</h2>
+            <p>
+            รายละเอียด :  {{ file.detail }}<br>
+            </p>  
+            <button [navPush]="detail5Page" ion-button clear item-end>View</button>
+          </ion-item>
+        </ion-card>  
+         
+      </ion-list>
+      </ion-content>

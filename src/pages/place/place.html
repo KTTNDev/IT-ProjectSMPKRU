@@ -1,0 +1,164 @@
+<ion-header>
+
+
+  <ion-toolbar no-border-top  >
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="P1">
+      <ion-icon name='ios-home-outline'></ion-icon>  
+      อาคาร   
+      </ion-segment-button>
+      <ion-segment-button value="P2">
+      <ion-icon name='ios-restaurant-outline'></ion-icon>   
+      โรงอาหาร   
+      </ion-segment-button>
+      <ion-segment-button value="P3">
+      <ion-icon name='ios-flag-outline'></ion-icon> 
+      สำนักงาน  
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+======
+<ion-content class="cards-bg" >
+    {{ latlng }}
+
+    <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="showTweetModal()"><ion-icon name="add"></ion-icon></button>
+      </ion-fab>
+  
+
+      
+<div class="bg"  color = "light">
+  <div [ngSwitch]="pet" class="bg">
+    <ion-list *ngSwitchCase="'P1'">
+      <ion-card class="adv-map" *ngFor="let file of files | async">
+        <div style="position: relative">
+          <img src="{{file.url}}">
+          <ion-fab right top>
+            <button   [navPush]="LocationPage" ion-fab color="add2" ion-fab class="fab-map">
+              <ion-icon name='pin'></ion-icon>
+            </button>
+          </ion-fab>
+        </div>
+        <ion-item>
+          <ion-icon color="subtle" large item-start name='ios-paper-outline'></ion-icon>
+          <h2>ข้อมูล</h2>
+          <p>
+          ชื่อตึก :     {{file.name}}<br>
+          จำนวนชั้น : {{file.floor}} <br>
+          
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-icon color="subtle" large item-start name='information-circle'></ion-icon>
+          <h2>รายละเอียด</h2>
+          <p>{{file.detail}}</p>
+          <button ion-button block outline icon-left color="danger" (click)="deleteFile(tweets)">
+            <ion-icon name="trash"></ion-icon> Delete
+          </button>
+        </ion-item>
+        <ion-item actions>
+          <span ion-text item-start color="add2" class="item-bold">18 min</span>
+          <span ion-text item-start color="subtle">(2.6 mi)</span>
+          <button  ion-button color="add2" clear item-end icon-start>
+            <ion-icon name='navigate'></ion-icon>
+            Start
+          </button>
+          <button  [navPush]="DetailPage" ion-button color="add2" clear item-end icon-start >
+            <ion-icon name='md-document'></ion-icon>
+            Detail
+          </button>
+        </ion-item>
+        
+      </ion-card>
+    </ion-list>
+  </div>
+
+
+
+
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'P2'">
+      <ion-card class="adv-map"  *ngFor="let type2 of files2 | async">
+        <div style="position: relative">
+          <img src="assets/imgs/T1.JPG">
+          <ion-fab right top>
+            <button ion-fab class="fab-map" color = "danger">
+              <ion-icon name='pin'></ion-icon>
+            </button>
+          </ion-fab>
+        </div>
+        <ion-item>
+          <ion-icon color="subtle" large item-start name='ios-paper-outline'></ion-icon>
+          <h2>ข้อมูล</h2>
+          <p>
+              ชื่อตึก :     {{type2.name}}<br>
+              จำนวนชั้น : {{type2.floor}} <br>
+              
+              </p>
+        </ion-item>
+        <ion-item>
+          <ion-icon color="subtle" large item-start name='information-circle'></ion-icon>
+          <h2>รายละเอียด</h2>
+          <p>{{type2.detail}}</p>
+
+        </ion-item>
+        <ion-item actions>
+          <span ion-text item-start color="danger" class="item-bold">18 min</span>
+          <span ion-text item-start color="subtle">(2.6 mi)</span>
+          <button ion-button color="danger" clear item-end icon-start>
+            <ion-icon name='navigate'></ion-icon>
+            Start
+          </button>
+          <button ion-button color="danger" clear item-end icon-start>
+            <ion-icon name='md-document'></ion-icon>
+            Detail
+          </button>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  </div>
+
+
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'P3'">
+      <ion-card class="adv-map"  *ngFor="let file of files | async">
+        <div style="position: relative">
+          <img src="assets/imgs/T3.JPEG">
+          <ion-fab right top>
+            <button ion-fab class="fab-map" color = "secondary">
+              <ion-icon name='pin' ></ion-icon>
+            </button>
+          </ion-fab>
+        </div>
+        <ion-item>
+          <ion-icon color="subtle" large item-start name='ios-paper-outline'></ion-icon>
+          <h2>ข้อมูล</h2>
+          <p>
+              ชื่อตึก :     {{file.name}}<br>
+              จำนวนชั้น : {{file.floor}} <br>
+              </p>
+        </ion-item>
+        <ion-item>
+          <ion-icon color="subtle" large item-start name='information-circle'></ion-icon>
+          <h2>รายละเอียด</h2>
+          <p>{{file.detail}}</p>
+        </ion-item>
+        <ion-item actions>
+          <span ion-text item-start color="secondary" class="item-bold">18 min</span>
+          <span ion-text item-start color="subtle">(2.6 mi)</span>
+          <button ion-button color="secondary" clear item-end icon-start>
+            <ion-icon name='navigate'></ion-icon>
+            Start
+          </button>
+          <button ion-button color="secondary" clear item-end icon-start>
+            <ion-icon name='md-document'></ion-icon>
+            Detail
+          </button>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  </div>
+</div>
+</ion-content>

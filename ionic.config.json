@@ -1,0 +1,7 @@
+{
+  "name": "smpkruA",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

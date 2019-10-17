@@ -1,0 +1,83 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>tweet-modal</ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>  
+      </ion-buttons>
+  
+    </ion-navbar>
+  
+  </ion-header>
+   
+  <ion-content>
+   
+    <ion-card *ngFor="let file of files | async">
+      <ion-card-header>
+       
+        <ion-item>
+          <ion-icon color="subtle" large item-start name='ios-paper-outline'></ion-icon>
+         <h1> {{ file.name  }}</h1>
+          <h2>ข้อมูล</h2>
+          <p>
+          ชื่อตึก :      {{ file.name  }}<br>
+          จำนวนชั้น : {{file.floor}} <br>
+          รายละเอียด : {{file.detail}} <br>
+          </p>
+        </ion-item>
+      </ion-card-header>
+   
+      <ion-card-content>
+          <ion-item>
+          <ion-icon color="subtle" large item-start name='information-circle'></ion-icon>
+              <h1> รูป</h1>
+            </ion-item>
+        <button ion-button block icon-left outline (click)="viewFile(file.url)">
+          <ion-icon name="eye"></ion-icon>
+          {{ file.created | date:'medium' }}
+        </button>
+   
+        <button ion-button block outline icon-left color="danger" (click)="deleteFile(file)">
+          <ion-icon name="trash"></ion-icon> Delete
+        </button>
+   
+      </ion-card-content>
+   
+    </ion-card>
+   
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="addFile()">
+        <ion-icon name="cloud-upload"></ion-icon>
+      </button>
+    </ion-fab>
+    <ion-list>
+        <ion-item>
+          <ion-label fixed>อัพโหลดรูป</ion-label>
+        </ion-item>
+
+          <button ion-button block (click)="getMedia()">UPLOAD</button>
+        
+        <ion-item>
+            <ion-label fixed>ชื่อ</ion-label>
+            <ion-input [(ngModel)]="name" type="text" value=""></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label fixed>จำนวนชั้น</ion-label>
+              <ion-input [(ngModel)]="floor" type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>รายละเอียด</ion-label>
+                <ion-input [(ngModel)]="detail" type="text" value=""></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label fixed> TEST URL</ion-label>
+                <ion-input [(ngModel)]="url" type="text" value=""></ion-input>
+              </ion-item>
+      <ion-item>
+        <button ion-button full (click)="createTweet(name,floor,detail,url)"><ion-icon name="file"> อัพโหลด </ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+  </ion-content>

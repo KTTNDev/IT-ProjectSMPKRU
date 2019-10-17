@@ -1,0 +1,52 @@
+<ion-header> 
+  <ion-navbar no-border-bottom color="light">
+ <button ion-button menuToggle>
+     <ion-icon name="menu"  color = "light"></ion-icon>
+   </button>
+<ion-row>
+  <ion-title color="Primary">
+    PKRUSMARTMAP
+  </ion-title><br>
+  <ion-col col-1 nopadding></ion-col>
+</ion-row>   
+</ion-navbar>
+     </ion-header>
+
+
+<ion-content padding class="card-background-page" >
+
+   <div class="cards-bg">
+    <ion-slides class="image-slider" style="width : 100% ; height : 100% "loop="true" autoplay="3000" speed="2000" >
+      <ion-slide *ngFor="let img of images">
+        <img src ="assets/imgs/{{img}}" class="thumb-img">
+      </ion-slide>
+    </ion-slides>
+  
+ 
+<ion-grid>
+    <ion-row>
+        <ion-col col-6>
+            <button  [navPush]="listPage" ion-button color="light" round icon-start style="width : 100% ; height : 110% ">
+                <div class="card-title">function</div>
+               </button>
+        </ion-col>
+        <ion-col col-6>
+            <button  [navPush]="detail1Page" ion-button color="light" round icon-start style="width : 100% ; height : 110% ">
+                <div class="card-title">function</div>
+               </button>
+        </ion-col>
+        <ion-col col-6>
+            <button  [navPush]="detail1Page" ion-button color="light" round icon-start style="width : 100% ; height : 110% ">
+                <div class="card-title">function</div>
+               </button>
+        </ion-col>
+        <ion-col col-6>
+            <button  [navPush]="detail1Page" ion-button color="light" round icon-start style="width : 100% ; height : 110% ">
+                <div class="card-title">function</div>
+               </button>
+        </ion-col>
+  </ion-row>   
+</ion-grid>
+
+</div>
+</ion-content><br>

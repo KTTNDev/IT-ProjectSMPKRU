@@ -1,0 +1,72 @@
+page-maps {
+    #map {
+        height: 100%;
+      }
+
+      .card-background-page{
+        background: url(../assets/imgs/bg1.jpg) no-repeat left fixed; 
+        color:color($colors, light);
+    }
+    .nopadding{
+      padding-left: 0px !important;
+      padding-right:0px !important;    
+  }
+    .toolbar-title{
+       text-align : left;
+       font-size: 20px;
+   font-family: 'Bungee Shade', cursive;
+    }
+    img {
+        opacity: 2.5;
+        filter: alpha(opacity=100); 
+        position: relative;
+    }
+    .bg {
+      
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.98) 1.48%, rgba(3, 62, 119, 0.68) 12.52%, rgb(210, 17, 83) 89.52%);
+      
+    }
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+        }
+      
+        .card-title {
+          position: absolute;
+          top: 35%;
+          font-size: 1.5em;
+          width: 90%;
+          font-weight: bold;
+          color: rgb(0, 0, 0);
+          font-family: 'Athiti',sans-serif;
+        }
+      
+        .card-subtitle {
+          font-size: 1.0em;
+          position: absolute;
+          top: 60%;
+          width: 90%;
+          color: rgb(0, 0, 0);
+        }
+      
+      }
+      body.ios {
+
+        .tab-button {
+          &[aria-selected="false"] {
+            color: #8c8c8c !important;
+          }
+      
+          &[aria-selected="true"] {
+            color: #f53d3d !important;
+          }
+        }
+      
+      }
+    }
